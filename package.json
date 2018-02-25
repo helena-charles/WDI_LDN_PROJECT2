@@ -1,0 +1,13 @@
+{
+  "name": "WDI_LDN_PROJECT2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:helena-charles/WDI_LDN_PROJECT2.git",
+  "author": "Helena Charles <helsz@hotmail.co.uk>",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1"
+  }
+}
