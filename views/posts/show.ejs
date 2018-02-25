@@ -12,10 +12,8 @@
       </div>
       <p><%= post.content %></p>
 
-
       <% if(locals.isAuthenticated) { %>
         <a href="/posts/<%= post._id %>/edit" class="button is-primary">Edit</a>
-
         <form method="POST" action="/posts/<%= post._id %>">
           <input type="hidden" name="_method" value="DELETE">
           <button class="button is-danger">Delete</button>
@@ -54,7 +52,6 @@
     </li>
   <% }) %>
 </ul>
-
 
         <form method="POST" action="/posts/<%= post._id %>/comments">
         <textarea class="textarea" name="content"></textarea>

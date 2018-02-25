@@ -8,6 +8,6 @@
     src: url('/css/fonts/noelan-script.otf'); /*URL to font*/
 }
 
-* {
+.homepage-title {
   font-family: 'noelan-script';
 }
