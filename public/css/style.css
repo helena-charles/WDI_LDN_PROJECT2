@@ -1,0 +1,13 @@
+/* .hero.homepage {
+  background-image: url(https://www.tastyeverafter.com/wp-content/uploads/2015/01/bluecheesewaxpaper.jpg);
+  background-size: cover;
+} */
+
+@font-face {
+    font-family: 'noelan-script'; /*a name to be used later*/
+    src: url('/css/fonts/noelan-script.otf'); /*URL to font*/
+}
+
+* {
+  font-family: 'noelan-script';
+}

@@ -1,0 +1,26 @@
+<div class="container">
+  <form method="POST" action="/posts/<%= post._id%>">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="field">
+      <label class="label">Title</label>
+      <div class="control">
+        <input class="input" name="title" type="text" placeholder="Title" value="<%= post.title %>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Image</label>
+      <div class="control">
+        <input class="input" name="image" type="text" placeholder="Image" value="<%= post.image %>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Content (min 30 chars)</label>
+      <div class="control">
+        <textarea class="textarea" name="content" placeholder="Content (min 30 chars)" minlength="30"><%= post.content %></textarea>
+      </div>
+    </div>
+    <div class="control">
+      <button class="button is-primary">Submit</button>
+    </div>
+  </form>
+</div>

@@ -6,8 +6,14 @@
   "author": "Helena Charles <helsz@hotmail.co.uk>",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "express-ejs-layouts": "^2.3.1"
+    "express-ejs-layouts": "^2.3.1",
+    "express-session": "^1.15.6",
+    "method-override": "^2.3.10",
+    "mongoose": "^5.0.7"
   }
 }
