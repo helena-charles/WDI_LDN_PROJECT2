@@ -18,3 +18,12 @@
 .slick-prev:before, .slick-next:before {
   color: blue !important;
 }
+
+.comments {
+  margin-bottom: 1.5rem;
+}
+
+form.delete {
+  display: inline-block;
+  float: right;
+}

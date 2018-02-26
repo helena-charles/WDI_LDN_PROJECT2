@@ -12,10 +12,11 @@ commentSchema.methods.isOwnedBy = function(user) {
 
 const schema = new mongoose.Schema({
   danceClass: { type: String, required: true, minlength: 2 },
-  location: { type: String, required: true, minlength: 2 },
+  studio: { type: String, required: true, minlength: 2 },
   content: { type: String, required: true, minlength: 30 },
   image: { type: String, pattern: /^https?\/\/.+/},
-  comments: [ commentSchema ]
+  comments: [ commentSchema ],
+  category: { type: mongoose.Schema.ObjectId, ref: 'Category', required: true }
 });
 
 schema

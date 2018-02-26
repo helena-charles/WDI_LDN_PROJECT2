@@ -1,4 +1,5 @@
 const Dance = require('../models/dance');
+const Category = require('../models/category');
 
 function indexRoute(req, res) {
   Dance.find()
@@ -17,7 +18,8 @@ function showRoute(req, res, next) {
 }
 
 function newRoute(req, res) {
-  res.render('dances/new');
+  Category.find()
+    .then(categories => res.render('dances/new', { categories }));
 }
 
 function createRoute(req, res, next) {
