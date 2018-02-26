@@ -1,5 +1,8 @@
 const Dance = require('../models/dance');
 const Category = require('../models/category');
+const mongoose = require('mongoose');
+mongoose.Promise = require('bluebird');
+
 
 function indexRoute(req, res) {
   Dance.find()
@@ -29,8 +32,11 @@ function createRoute(req, res, next) {
 }
 
 function editRoute(req, res) {
-  Dance.findById(req.params.id)
-    .then(dance => res.render('dances/edit', { dance }));
+  Promise.props({
+    dance: Dance.findById(req.params.id),
+    categories: Category.find()
+  })
+    .then(data => res.render('dances/edit', data)); // inject the data into the view
 }
 
 function updateRoute(req, res) {
