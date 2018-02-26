@@ -1,13 +1,20 @@
+@font-face {
+  font-family: 'noelan-script'; /*a name to be used later*/
+  src: url('/css/fonts/noelan-script.otf'); /*URL to font*/
+}
+
 /* .hero.homepage {
-  background-image: url(https://www.tastyeverafter.com/wp-content/uploads/2015/01/bluecheesewaxpaper.jpg);
-  background-size: cover;
+  background-image: url(https://placeimg.com/500/200/any);
+  background-size: contain;
+  background-repeat: no-repeat;
 } */
 
-@font-face {
-    font-family: 'noelan-script'; /*a name to be used later*/
-    src: url('/css/fonts/noelan-script.otf'); /*URL to font*/
-}
 
 .homepage-title {
   font-family: 'noelan-script';
+  /* postition: absolute; */
+}
+
+.slick-prev:before, .slick-next:before {
+  color: blue !important;
 }

@@ -1,13 +1,17 @@
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
-const Post = require('../models/post');
-const postData = require('./data/posts');
+const Dance = require('../models/dance');
+const danceData = require('./data/dances');
+const Studio = require('../models/studio');
+const studioData = require('./data/studios');
 
-mongoose.connect('mongodb://localhost/blogposts-database', (err, db) => {
+mongoose.connect('mongodb://localhost/dances-database', (err, db) => {
   db.dropDatabase();
 
-  Post.create(postData)
-    .then(posts => console.log(`${posts.length} posts created`))
+  Dance.create(danceData)
+    .then(dances => console.log(`${dances.length} dances created`))
+    .then(() => Studio.create(studioData))
+    .then(studios => console.log(`${studios.length} studios created`))
     .catch(err => console.log(err))
     .finally(() => mongoose.connection.close());
 });

@@ -1,17 +1,17 @@
 <main class="container">
   <div class="columns is-multiline">
-    <% posts.forEach(post => { %>
+    <% studios.forEach(studio => { %>
       <div class="column is-one-quarter-desktop is-half-tablet">
-      <a href="/posts/<%= post._id %>">
+      <a href="/studios/<%= studio._id %>">
         <div class="card">
           <div class="card-image">
             <figure class="image">
-              <img src="<%= posts.image %>" alt="<%= post.title %>">
+              <img src="<%= studio.image %>" alt="<%= studio.name %>">
             </figure>
           </div>
           <div class="card-content">
-            <h3 class="title"><%= post.title %></h3>
-            // <h4 class="subtitle"><%= post.origin %></h4>
+            <h3 class="title"><%= studio.name %></h3>
+            <h4 class="subtitle"><%= studio.location %></h4>
           </div>
         </div>
       </div>

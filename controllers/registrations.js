@@ -6,7 +6,7 @@ function newRoute(req, res) {
 
 function createRoute(req, res, next) {
   User.create(req.body)
-    .then(() => res.redirect('/posts'))
+    .then(() => res.redirect('/dances'))
     .catch(next);
 }
 

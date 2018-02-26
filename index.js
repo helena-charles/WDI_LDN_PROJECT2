@@ -18,7 +18,7 @@ app.use(expressLayouts);
 
 app.use(express.static(`${__dirname}/public`));
 
-mongoose.connect('mongodb://localhost/blogposts-database');
+mongoose.connect('mongodb://localhost/dances-database');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 

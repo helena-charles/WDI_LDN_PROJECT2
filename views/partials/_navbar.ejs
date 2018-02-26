@@ -1,8 +1,9 @@
 <nav class="navbar">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="https://omitlimitation.files.wordpress.com/2017/04/blank-canvas-logo-final-banner-slim.jpg?w=640&h=140" alt="Blank Canvas">>
+      <img src="https://omitlimitation.files.wordpress.com/2017/04/blank-canvas-logo-final-banner-slim.jpg?w=640&h=140" alt="Blank Canvas">
       &nbsp;
+      Blank Canvas
     </a>
     <div class="navbar-burger" data-target="#mobile-menu">
       <span></span>
@@ -12,9 +13,11 @@
   </div>
   <div id="mobile-menu" class="navbar-menu">
     <div class="navbar-end">
-      <a class="navbar-item" href="/posts">All posts</a>
+      <a class="navbar-item" href="/dances">All dances</a>
+      <a class="navbar-item" href="/studios">All studios</a>
       <% if(locals.isAuthenticated) { %>
-        <a class="navbar-item" href="/posts/new">Add a post</a>
+        <a class="navbar-item" href="/dances/new">Add a dance</a>
+        <a class="navbar-item" href="/studios/new">Add a studio</a>
         <a class="navbar-item" href="/logout">Logout</a>
         <% } else { %>
           <a class="navbar-item" href="/register">Register</a>

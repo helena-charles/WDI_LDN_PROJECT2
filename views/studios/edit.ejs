@@ -1,0 +1,32 @@
+<div class="container">
+  <form method="POST" action="/studio/<%= studio._id%>">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="field">
+      <label class="label">Dance Class</label>
+      <div class="control">
+        <input class="input" name="name" type="text" placeholder="Name" value="<%= studio.name %>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Location</label>
+      <div class="control">
+        <input class="input" name="location" type="text" placeholder="Location" value="<%= studio.location %>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Image</label>
+      <div class="control">
+        <input class="input" name="image" type="text" placeholder="Image" value="<%= studio.image %>" required>
+      </div>
+    </div>
+    <div class="field">
+      <label class="label">Information (min 30 chars)</label>
+      <div class="control">
+        <textarea class="textarea" name="information" placeholder="Information (min 30 chars)" minlength="30"><%= studio.information %></textarea>
+      </div>
+    </div>
+    <div class="control">
+      <button class="button is-primary">Submit</button>
+    </div>
+  </form>
+</div>

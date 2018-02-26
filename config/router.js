@@ -1,31 +1,53 @@
 const router = require('express').Router();
-const posts = require('../controllers/posts');
+const dances = require('../controllers/dances');
+const studios = require('../controllers/studios');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const secureRoute = require('../lib/secureRoute');
 
 router.get('/', (req, res) => res.render('pages/home'));
 
-router.route('/posts')
-  .get(posts.index)
-  .post(secureRoute, posts.create);
+router.route('/dances')
+  .get(dances.index)
+  .post(secureRoute, dances.create);
 
-router.route('/posts/new')
-  .get(secureRoute, posts.new);
+router.route('/dances/new')
+  .get(secureRoute, dances.new);
 
-router.route('/posts/:id')
-  .get(posts.show)
-  .put(secureRoute, posts.update)
-  .delete(secureRoute, posts.delete);
+router.route('/dances/:id')
+  .get(dances.show)
+  .put(secureRoute, dances.update)
+  .delete(secureRoute, dances.delete);
 
-router.route('/posts/:id/edit')
-  .get(secureRoute, posts.edit);
+router.route('/dances/:id/edit')
+  .get(secureRoute, dances.edit);
 
-router.route('/posts/:id/comments')
-  .post(secureRoute, posts.commentsCreate);
+router.route('/dances/:id/comments')
+  .post(secureRoute, dances.commentsCreate);
 
-router.route('.posts/:id/comments/:commentId')
-  .delete(secureRoute, posts.commentsDelete);
+router.route('/dances/:id/comments/:commentId')
+  .delete(secureRoute, dances.commentsDelete);
+
+router.route('/studios')
+  .get(studios.index)
+  .post(secureRoute, studios.create);
+
+router.route('/studios/new')
+  .get(secureRoute, studios.new);
+
+router.route('/studios/:id')
+  .get(studios.show)
+  .put(secureRoute, studios.update)
+  .delete(secureRoute, studios.delete);
+
+router.route('/studios/:id/edit')
+  .get(secureRoute, studios.edit);
+
+router.route('/studios/:id/comments')
+  .post(secureRoute, dances.commentsCreate);
+
+router.route('/studios/:id/comments/:commentId')
+  .delete(secureRoute, dances.commentsDelete);
 
 router.route('/register')
   .get(registrations.new)

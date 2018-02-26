@@ -2,19 +2,20 @@
   <div class="columns">
     <div class="column">
       <figure class="image">
-        <img src="<%= post.image %>" alt="<%= post.title %>">
+        <img src="<%= studio.image %>" alt="<%= studio.name %>">
       </figure>
     </div>
     <div class="column">
-      <h3 class="title"><%= post.title %></h3>
+      <h3 class="title"><%= studio.name %></h3>
       <div class="icon is-small">
         <i class="fa fa-pencil"></i>
       </div>
-      <p><%= post.content %></p>
+      <p><%= studio.information %></p>
+      <p><%= studio.avgRating %> Stars</p>
 
       <% if(locals.isAuthenticated) { %>
-        <a href="/posts/<%= post._id %>/edit" class="button is-primary">Edit</a>
-        <form method="POST" action="/posts/<%= post._id %>">
+        <a href="/studios/<%= studio._id %>/edit" class="button is-primary">Edit</a>
+        <form method="POST" action="/studios/<%= studio._id %>">
           <input type="hidden" name="_method" value="DELETE">
           <button class="button is-danger">Delete</button>
         </form>
@@ -22,11 +23,11 @@
         <hr />
 
 <ul class="comments">
-  <% post.comments.forEach(comment => { %>
+  <% studio.comments.forEach(comment => { %>
     <li>
     <div class="box">
     <% if(comment.isOwnedBy(locals.currentUser)) { %>
-      <form class="delete" method="POST" action="/posts/<%= post._id %>/comments/<%= comment._id %>">
+      <form class="delete" method="POST" action="/studios/<%= studio._id %>/comments/<%= comment._id %>">
         <input type="hidden" name="_method" value="DELETE">
         <button class="delete">x</button>
       </form>
@@ -53,8 +54,10 @@
   <% }) %>
 </ul>
 
-        <form method="POST" action="/posts/<%= post._id %>/comments">
+
+        <form method="POST" action="/studios/<%= studio._id %>/comments">
         <textarea class="textarea" name="content"></textarea>
+        <p>Rating: <input type="text" name="rating"></input></p>
         <button class="button is-primary">Submit</button>
         </form>
       <% } %>

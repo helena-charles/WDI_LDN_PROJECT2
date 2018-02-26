@@ -13,7 +13,7 @@ function createRoute(req, res, next) {
 
       req.session.userId = user._id;
 
-      return res.redirect('/posts');
+      return res.redirect('/dances');
     })
     .catch(next);
 }
