@@ -10,6 +10,7 @@
       <div class="icon is-small">
         <i class="fa fa-pencil"></i>
       </div>
+      <p><%= dance.category %></p>
       <p><%= dance.content %></p>
       <p><%= dance.avgRating %> Stars</p>
 
@@ -21,6 +22,18 @@
           <button class="button is-danger">Delete</button>
         </form>
 
+        <% if(!locals.currentUser.hasFavourited(dance)) { %>
+        <form method="POST" action="/dances/<%= dance._id %>/favourite">
+          <input type="hidden" name="_method" value="<% dance._id %>">
+          <button class="button is-primary">Favourite</button>
+        </form>
+        <% } else { %>
+          <form method="POST" action="/dances/<%= dance._id %>/favourite">
+            <input type="hidden" name="_method" value="DELETE">
+            <button class="button is-primary">Unfavourite</button>
+          </form>
+          <% } %>
+          
         <hr />
 
         <form method="POST" action="/dances/<%= dance._id %>/comments">

@@ -1,16 +1,6 @@
 <main class="container">
-  
-      <form>
-        <select name="category">
-        <% categories.forEach(category => { %>
-          <option<% if(category === selectedCategory) {%> selected<% } %>><%= category %></option>
-          <% }) %>
-          </select>
-          <button>Go</button>
-      </form>
-
   <div class="columns is-multiline">
-    <% dances.forEach(dance => { %>
+    <% locals.currentUser.favouriteList.forEach(dance => { %>
       <div class="column is-one-quarter-desktop is-half-tablet">
       <a href="/dances/<%= dance._id %>">
         <div class="card">
@@ -22,13 +12,10 @@
           <div class="card-content">
             <h3 class="title"><%= dance.danceClass %></h3>
             <h4 class="subtitle"><%= dance.studio %></h4>
-            <h4 class="subtitle"><%= dance.rating %></h4>
-            <h4 class="subtitle"><%= dance.category %></h4>
           </div>
         </div>
       </div>
       </a>
       <% }) %>
   </div>
-
 </main>

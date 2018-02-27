@@ -1,14 +1,26 @@
 const Dance = require('../models/dance');
 // const Category = require('../models/category');
 // const mongoose = require('mongoose');
-// mongoose.Promise = require('bluebird');
+const Promise = require('bluebird');
 // mongoose.Types.ObjectId.isValid(Dance.category);
 
 
 function indexRoute(req, res) {
-  const selection = false;
-  Dance.find()
-    .then(dances => res.render('dances/index', { dances, selection }));
+
+  Promise.props({
+    allDances: Dance.find().exec(),
+    dances: Dance.find(req.query).exec()
+  })
+    .then(data => {
+      const allCategories = data.allDances.map(dance => dance.category);
+      const uniqueCategories = Array.from(new Set(allCategories)).sort();
+
+      res.render('dances/index', {
+        dances: data.dances,
+        categories: uniqueCategories,
+        selectedCategory: req.query.category
+      });
+    });
 }
 
 function filter(req, res) {
@@ -30,8 +42,7 @@ function showRoute(req, res, next) {
 
 
 function newRoute(req, res) {
-  Category.find()
-    .then(categories => res.render('dances/new', { categories }));
+  res.render('dances/new');
 }
 
 function createRoute(req, res, next) {
@@ -80,6 +91,24 @@ function commentsDeleteRoute(req, res, next) {
     .catch(next);
 }
 
+function danceFavouriteRoute(req, res, next) {
+  req.currentUser.favouriteList.push(req.params.id);
+
+  req.currentUser.save()
+    .then(() => res.redirect(`/dances/${req.params.id}`))
+    .catch(next);
+}
+
+function deleteFavouriteRoute(req, res, next) {
+  req.currentUser.favouriteList = req.currentUser.favouriteList.filter(dance => {
+    return !dance._id.equals(req.params.id);
+  });
+
+  req.currentUser.save()
+    .then(() => res.redirect(`/dances/${req.params.id}`))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   filter: filter,
@@ -90,5 +119,7 @@ module.exports = {
   update: updateRoute,
   delete: deleteRoute,
   commentsCreate: commentsCreateRoute,
-  commentsDelete: commentsDeleteRoute
+  commentsDelete: commentsDeleteRoute,
+  danceFavourite: danceFavouriteRoute,
+  deleteFavourite: deleteFavouriteRoute
 };

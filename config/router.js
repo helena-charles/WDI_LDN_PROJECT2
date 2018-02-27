@@ -31,6 +31,10 @@ router.route('/dances/:id/comments')
 router.route('/dances/:id/comments/:commentId')
   .delete(secureRoute, dances.commentsDelete);
 
+router.route('/dances/:id/favourite')
+  .post(secureRoute, dances.danceFavourite)
+  .delete(secureRoute, dances.deleteFavourite);
+
 router.route('/studios')
   .get(studios.index)
   .post(secureRoute, studios.create);
@@ -55,6 +59,9 @@ router.route('/studios/:id/comments/:commentId')
 router.route('/register')
   .get(registrations.new)
   .post(registrations.create);
+
+router.route('/profile')
+  .get(secureRoute, registrations.profile);
 
 router.route('/login')
   .get(sessions.new)

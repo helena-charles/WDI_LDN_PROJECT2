@@ -2,6 +2,15 @@
   <form method="POST" action="/dances/<%= dance._id%>">
     <input type="hidden" name="_method" value="PUT">
     <div class="field">
+      <label class="label">Category</label>
+      <select name="category">
+        <option selected disabled>Please choose</option>
+        <option value="Tap">Tap</option>
+        <option value="World">World</option>
+        <option value="Classical">Classical</option>
+        </select>
+      </div>
+    <div class="field">
       <label class="label">Dance Class</label>
       <div class="control">
         <input class="input" name="danceclass" type="text" placeholder="Dance Class" value="<%= dance.danceClass %>" required>
