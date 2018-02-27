@@ -13,6 +13,7 @@
       <p><%= dance.content %></p>
       <p><%= dance.avgRating %> Stars</p>
 
+
       <% if(locals.isAuthenticated) { %>
         <a href="/dances/<%= dance._id %>/edit" class="button is-primary">Edit</a>
         <form method="POST" action="/dances/<%= dance._id %>">
@@ -22,44 +23,74 @@
 
         <hr />
 
-<ul class="comments">
-  <% dance.comments.forEach(comment => { %>
-    <li>
-    <div class="box">
-    <% if(comment.isOwnedBy(locals.currentUser)) { %>
-      <form class="delete" method="POST" action="/dances/<%= dance._id %>/comments/<%= comment._id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button class="delete">x</button>
-      </form>
-      <% } %>
-      <article class="media">
-        <div class="media-left">
-          <figure class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-          </figure>
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <%= comment.content %>
-            </p>
-            <% if(comment.user) { %>
-            <strong><%= comment.user.username %></strong>
-            <% } %>
-          </div>
-        </div>
-      </article>
-      </div>
-    </li>
-  <% }) %>
-</ul>
-
-
         <form method="POST" action="/dances/<%= dance._id %>/comments">
-        <textarea class="textarea" name="content"></textarea>
-        <p>Rating: <input type="text" name="rating"></input></p>
-        <button class="button is-primary">Submit</button>
+
+          <div class="field">
+            <div class="control">
+              <input name="maintitle" class="input" type="text" placeholder="Add your review title here">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea" name="content"></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <input class="ratingValue" type="hidden" name="rating"></input>
+            <div class="rating">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label class="full" for="star5"></label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label class="full" for="star4"></label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label class="full" for="star3"></label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label class="full" for="star2"></label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label class="full" for="star1"></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <button class="button is-primary">Submit</button>
+          </div>
         </form>
+
+        <hr />
+
+        <ul class="comments">
+          <% dance.comments.forEach(comment => { %>
+            <li>
+            <div class="box">
+            <% if(comment.isOwnedBy(locals.currentUser)) { %>
+              <form class="delete" method="POST" action="/dances/<%= dance._id %>/comments/<%= comment._id %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="delete">x</button>
+              </form>
+              <% } %>
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                  <p><strong><%= comment.maintitle %></strong></p>
+                    <p>
+                      <%= comment.content %>
+                    </p>
+                    <% if(comment.user) { %>
+                    <strong><%= comment.user.username %></strong>
+                    <% } %>
+                  </div>
+                </div>
+              </article>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+
       <% } %>
     </div>
   </div>

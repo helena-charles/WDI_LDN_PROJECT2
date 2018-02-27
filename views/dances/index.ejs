@@ -1,4 +1,16 @@
 <main class="container">
+  <div>
+    <form class="" action="/dances/filter" method="POST">
+      <select name="category">
+        <option value="">All</option>
+        <option value="Tap">Tap</option>
+        <option value="World">World</option>
+        <option value="Classical">Classical</option>
+      </select>
+      <input type="submit" value="Go">
+    </form>
+    <% if(selection) dances = dances.filter(dance => dance.category === selection); %>
+  </div>
   <div class="columns is-multiline">
     <% dances.forEach(dance => { %>
       <div class="column is-one-quarter-desktop is-half-tablet">
@@ -18,4 +30,5 @@
       </a>
       <% }) %>
   </div>
+
 </main>

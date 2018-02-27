@@ -11,6 +11,9 @@ router.route('/dances')
   .get(dances.index)
   .post(secureRoute, dances.create);
 
+router.route('/dances/filter')
+  .post(dances.filter);
+
 router.route('/dances/new')
   .get(secureRoute, dances.new);
 

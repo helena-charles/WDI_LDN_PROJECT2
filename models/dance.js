@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
+  maintitle: { type: String, minlength: 2 },
   content: { type: String },
   rating: { type: Number, min: 1, max: 5 },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
@@ -16,7 +17,7 @@ const schema = new mongoose.Schema({
   content: { type: String, required: true, minlength: 30 },
   image: { type: String, pattern: /^https?\/\/.+/},
   comments: [ commentSchema ],
-  category: { type: mongoose.Schema.ObjectId, ref: 'Category', required: true }
+  category: { type: String, minlength: 2 }
 });
 
 schema
