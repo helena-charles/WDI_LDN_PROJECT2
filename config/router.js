@@ -11,9 +11,6 @@ router.route('/dances')
   .get(dances.index)
   .post(secureRoute, dances.create);
 
-router.route('/dances/filter')
-  .post(dances.filter);
-
 router.route('/dances/new')
   .get(secureRoute, dances.new);
 
@@ -51,10 +48,10 @@ router.route('/studios/:id/edit')
   .get(secureRoute, studios.edit);
 
 router.route('/studios/:id/comments')
-  .post(secureRoute, dances.commentsCreate);
+  .post(secureRoute, studios.commentsCreate);
 
 router.route('/studios/:id/comments/:commentId')
-  .delete(secureRoute, dances.commentsDelete);
+  .delete(secureRoute, studios.commentsDelete);
 
 router.route('/register')
   .get(registrations.new)

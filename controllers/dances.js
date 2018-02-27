@@ -6,6 +6,7 @@ const Promise = require('bluebird');
 
 
 function indexRoute(req, res) {
+  if(req.query.category === 'All') req.query = {};
 
   Promise.props({
     allDances: Dance.find().exec(),
@@ -23,23 +24,15 @@ function indexRoute(req, res) {
     });
 }
 
-function filter(req, res) {
-  const selection = req.body.category;
-  Dance.find()
-    .then(dances => res.render('dances/index', { dances, selection }));
-}
-
 function showRoute(req, res, next) {
   Dance.findById(req.params.id)
     .populate('comments.user')
     .then(dance => {
-      console.log(dance);
       if(!dance) return res.render('pages/404');
       res.render('dances/show', { dance });
     })
     .catch(next);
 }
-
 
 function newRoute(req, res) {
   res.render('dances/new');
@@ -111,7 +104,6 @@ function deleteFavouriteRoute(req, res, next) {
 
 module.exports = {
   index: indexRoute,
-  filter: filter,
   show: showRoute,
   new: newRoute,
   create: createRoute,

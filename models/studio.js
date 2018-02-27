@@ -6,7 +6,7 @@ const commentSchema = new mongoose.Schema({
 });
 
 commentSchema.methods.isOwnedBy = function(user) {
-  return this.user && user._id.equals(this.user._id);
+  return this.user._id && user._id.equals(this.user._id);
 };
 
 const schema = new mongoose.Schema({

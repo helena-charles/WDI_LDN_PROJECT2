@@ -33,7 +33,7 @@
             <button class="button is-primary">Unfavourite</button>
           </form>
           <% } %>
-          
+
         <hr />
 
         <form method="POST" action="/dances/<%= dance._id %>/comments">
@@ -89,9 +89,8 @@
                 <div class="media-content">
                   <div class="content">
                   <p><strong><%= comment.maintitle %></strong></p>
-                    <p>
-                      <%= comment.content %>
-                    </p>
+                    <p><%= comment.content %></p>
+                    <p>Rating: <%= comment.rating %> Stars</p>
                     <% if(comment.user) { %>
                     <strong><%= comment.user.username %></strong>
                     <% } %>

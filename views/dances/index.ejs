@@ -1,9 +1,10 @@
 <main class="container">
-  
+
       <form>
         <select name="category">
+          <option>All</option>
         <% categories.forEach(category => { %>
-          <option<% if(category === selectedCategory) {%> selected<% } %>><%= category %></option>
+          <option<% if(category === selectedCategory) { %> selected<% } %>><%= category %></option>
           <% }) %>
           </select>
           <button>Go</button>

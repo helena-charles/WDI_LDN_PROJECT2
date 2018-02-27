@@ -9,7 +9,6 @@ function showRoute(req, res, next) {
   studio.findById(req.params.id)
     .populate('comments.user')
     .then(studio => {
-      console.log(studio);
       if(!studio) return res.render('pages/404');
       res.render('studios/show', { studio });
     })
@@ -44,6 +43,28 @@ function deleteRoute(req, res) {
     .then(() => res.redirect('/studios'));
 }
 
+function commentsCreateRoute(req, res, next) {
+  req.body.user = req.currentUser;
+  studio.findById(req.params.id)
+    .then(studio => {
+      studio.comments.push(req.body);
+      return studio.save();
+    })
+    .then(studio => res.redirect(`/studios/${studio._id}`))
+    .catch(next);
+}
+
+function commentsDeleteRoute(req, res, next) {
+  studio.findById(req.params.id)
+    .then(studio => {
+      const comment = studio.comments.id(req.params.commentId);
+      comment.remove();
+      return studio.save();
+    })
+    .then(studio => res.redirect(`/studios/${studio._id}`))
+    .catch(next);
+}
+
 module.exports = {
   index: indexRoute,
   show: showRoute,
@@ -51,5 +72,7 @@ module.exports = {
   create: createRoute,
   edit: editRoute,
   update: updateRoute,
-  delete: deleteRoute
+  delete: deleteRoute,
+  commentsCreate: commentsCreateRoute,
+  commentsDelete: commentsDeleteRoute
 };
