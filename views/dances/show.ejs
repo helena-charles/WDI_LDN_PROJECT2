@@ -7,9 +7,7 @@
     </div>
     <div class="column">
       <h3 class="title"><%= dance.danceClass %></h3>
-      <div class="icon is-small">
-        <i class="fa fa-pencil"></i>
-      </div>
+
       <p><%= dance.category %></p>
       <p><%= dance.content %></p>
       <p>Average Rating: <%= dance.avgRating %></p>
@@ -101,7 +99,9 @@
           <% }) %>
         </ul>
 
-      <% } %>
+      <% } else { %>
+        <p>Log in to leave a review</p>
+        <% } %>
 
 
     </div>

@@ -7,11 +7,10 @@
     </div>
     <div class="column">
       <h3 class="title"><%= studio.name %></h3>
-      <div class="icon is-small">
-        <i class="fa fa-pencil"></i>
-      </div>
+
       <p><%= studio.information %></p>
-      <p><%= studio.avgRating %> Stars</p>
+      <p><%= studio.location %></p>
+      <p>Average Rating: <%= studio.avgRating %></p>
 
       <div class="dance-list">
         <h3>Dances</h3>
@@ -65,7 +64,9 @@
         <p>Rating: <input type="text" name="rating"></input></p>
         <button class="button is-primary">Submit</button>
         </form>
-      <% } %>
+      <% } else { %>
+        <p>Log in to leave a review</p>
+        <% } %>
 
 
 

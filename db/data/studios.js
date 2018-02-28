@@ -2,13 +2,13 @@ module.exports = [{
   name: 'Husky Studios',
   location: 'Elephant and Castle',
   information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  image: 'http://www.huskystudios.co.uk/wp-content/uploads/2015/11/Trans-Husky-Studios.fw_.png',
+  image: 'https://s-media-cache-ak0.pinimg.com/originals/e0/a7/e7/e0a7e7d863fafc6ece5b5f0494889f45.jpg',
   klasses: []
 },{
   name: 'Studio B',
   location: 'Brixton',
   information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  image: 'https://pbs.twimg.com/profile_images/610137976329383936/E5EF9qZb_400x400.png',
+  image: 'http://theblastingroom.com/wp-content/uploads/2016/06/studio-b-Header.png',
   klasses: ['Afrobeats']
 },{
   name: 'Danceworks',
@@ -26,19 +26,19 @@ module.exports = [{
   name: 'Dance Attic',
   location: 'Fulham',
   information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  image: 'https://youthmusictheatreuk.org/sites/default/files/styles/466x310/public/ymt_website_danceattic_image2.jpg?itok=eGcZHRzj',
+  image: 'https://tangolicious.files.wordpress.com/2014/07/dance-attic-logo.gif',
   klasses: ['Tap Dance']
 },{
   name: 'Pineapple Dance Studios',
   location: 'Covent Garden',
   information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  image: 'https://yt3.ggpht.com/a-/AJLlDp2CXDlrEuO-LG6bixM0ZIvWi1TXmT4p798fjQ=s900-mo-c-c0xffffffff-rj-k-no',
+  image: 'https://s-media-cache-ak0.pinimg.com/236x/c9/43/c2/c943c2d58196a11289fd605becf30e2d--pineapple-dance-studios.jpg',
   klasses: []
 },{
   name: 'Studio 68',
   location: 'Waterloo',
   information: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-  image: 'http://studio68london.net/wp-content/uploads/2014/11/logo_HDPI.png',
+  image: 'https://ukstanduptv.files.wordpress.com/2011/12/studio68.jpg',
   klasses: []
 },{
   name: 'Kelechnekoff Studio',

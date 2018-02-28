@@ -21,10 +21,16 @@
             </figure>
           </div>
           <div class="card-content">
-            <h3 class="title"><%= dance.danceClass %></h3>
-            <h4 class="subtitle"><%= dance.studio %></h4>
-            <h4 class="subtitle">Average Rating: <%= dance.avgRating %></h4>
-            <h4 class="subtitle"><%= dance.category %></h4>
+            <div class="columns">
+              <div class="column danceInfoColumn">
+                <h3 class="title is-5"><%= dance.danceClass %></h3>
+                <h4 class="subtitle is-6"><%= dance.studio %></h4>
+                <h4 class="subtitle is-6"><%= dance.category %></h4>
+              </div>
+              <div class="column ratingColumn">
+                <h4 class="subtitle is-6"><%= dance.avgRating %></h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>

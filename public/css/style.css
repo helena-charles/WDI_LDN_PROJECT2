@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: 'Abel', sans-serif;
 }
 /* .hero.homepage {
   background-image: url(https://placeimg.com/500/200/any);
@@ -31,24 +32,45 @@ form.delete {
 
 .card {
   box-shadow: none;
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.card:hover {
+  border-radius: 10px;
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+}
+
+.card-content{
+  padding: 24px 5px;
+}
+
+.ratingColumn h4 {
+  float: right;
+  margin-right: 10px;
 }
 
 form.sort, label {
   margin-bottom: 20px;
+  margin-top: 15px;
 }
 
 .navbar {
-  margin: 10px 100px;
+  /* margin: 10px 100px; */
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 }
 
-.navbar-item, .navbar-link {
+.container>.navbar {
+  margin: 10px 0;
+}
 
+.navbar-item{
+  padding: 0 30px;
 }
 
 .navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover {
-
+  background-color: white;
+  font-weight: 600;
 }
 
 
