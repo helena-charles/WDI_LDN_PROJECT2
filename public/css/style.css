@@ -1,19 +1,11 @@
-@font-face {
-  font-family: 'noelan-script'; /*a name to be used later*/
-  src: url('/css/fonts/noelan-script.otf'); /*URL to font*/
+* {
+  box-sizing: border-box;
 }
-
 /* .hero.homepage {
   background-image: url(https://placeimg.com/500/200/any);
   background-size: contain;
   background-repeat: no-repeat;
 } */
-
-
-.homepage-title {
-  font-family: 'noelan-script';
-  /* postition: absolute; */
-}
 
 .slick-prev:before, .slick-next:before {
   color: blue !important;
@@ -33,7 +25,31 @@ form.delete {
   flex-direction: row;
 }
 
+.image img {
+  border-radius: 10px;
+}
 
+.card {
+  box-shadow: none;
+}
+
+form.sort, label {
+  margin-bottom: 20px;
+}
+
+.navbar {
+  margin: 10px 100px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.navbar-item, .navbar-link {
+
+}
+
+.navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover {
+
+}
 
 
 form, label { margin: 0; padding: 0; }

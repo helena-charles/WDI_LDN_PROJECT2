@@ -1,6 +1,6 @@
 <main class="container">
 
-      <form>
+      <form class="sort">
         <select name="category">
           <option>All</option>
         <% categories.forEach(category => { %>
@@ -16,7 +16,7 @@
       <a href="/dances/<%= dance._id %>">
         <div class="card">
           <div class="card-image">
-            <figure class="image">
+            <figure class="image is-3by2">
               <img src="<%= dance.image %>" alt="<%= dance.danceClass %>">
             </figure>
           </div>
