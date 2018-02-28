@@ -4,8 +4,12 @@ const studios = require('../controllers/studios');
 const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const secureRoute = require('../lib/secureRoute');
+const home = require('../controllers/home');
 
-router.get('/', (req, res) => res.render('pages/home'));
+// router.get('/', (req, res) => res.render('pages/home'));
+
+router.route('/')
+  .get(home.index);
 
 router.route('/dances')
   .get(dances.index)

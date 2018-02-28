@@ -14,18 +14,18 @@
 
       <% if(locals.isAuthenticated) { %>
         <div class="column showButtons">
-        <div class="column">
+ 
         <a href="/dances/<%= dance._id %>/edit" class="button">Edit</a>
-        </div>
 
-        <div class="column">
+
+
         <form method="POST" action="/dances/<%= dance._id %>">
           <input type="hidden" name="_method" value="DELETE">
           <button class="button">Delete</button>
         </form>
-        </div>
 
-        <div class="column">
+
+
         <% if(!locals.currentUser.hasFavourited(dance)) { %>
         <form method="POST" action="/dances/<%= dance._id %>/favourite">
           <input type="hidden" name="_method" value="<% dance._id %>">
@@ -38,7 +38,7 @@
           </form>
           <% } %>
           </div>
-          </div>
+
 
         <hr />
 

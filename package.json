@@ -5,6 +5,9 @@
   "repository": "git@github.com:helena-charles/WDI_LDN_PROJECT2.git",
   "author": "Helena Charles <helsz@hotmail.co.uk>",
   "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "dependencies": {
     "bcrypt": "^1.0.3",
     "bluebird": "^3.5.1",

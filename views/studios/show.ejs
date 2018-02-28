@@ -19,11 +19,10 @@
 
       <% if(locals.isAuthenticated) { %>
         <div class="column showButtons">
-        <div class="column">
-        <a href="/studios/<%= studio._id %>/edit" class="button">Edit</a>
-        </div>
 
-        <div class="column">
+        <a href="/studios/<%= studio._id %>/edit" class="button">Edit</a>
+
+
         <form method="POST" action="/studios/<%= studio._id %>">
           <input type="hidden" name="_method" value="DELETE">
           <button class="button">Delete</button>
