@@ -1,10 +1,16 @@
 <main class="container">
   <div class="columns is-multiline">
     <div class="column">
+      <div class="column profileUserInfo">
+        <div class="column profilePhoto">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png" alt="Profile Photo">
+      </div>
       <div class="column">
-      <h3 class="title">User: <%= locals.currentUser.username %></h3>
-      <h3 class="title">Email: <%= locals.currentUser.email %></h3>
-      <h2 class="title">My dance class wishlist:</h2>
+
+      <h3 class="title is-4">User: <%= locals.currentUser.username %></h3>
+      <h3 class="title is-4">Email: <%= locals.currentUser.email %></h3>
+      <h2 class="title is-4">My dance class wishlist:</h2>
+    </div>
     </div>
     <div class="column dance-wishlist">
     <% locals.currentUser.favouriteList.forEach(dance => { %>
@@ -12,13 +18,21 @@
       <a href="/dances/<%= dance._id %>">
         <div class="card">
           <div class="card-image">
-            <figure class="image">
+            <figure class="image is-3by2">
               <img src="<%= dance.image %>" alt="<%= dance.danceClass %>">
             </figure>
           </div>
           <div class="card-content">
-            <h3 class="title"><%= dance.danceClass %></h3>
-            <h4 class="subtitle"><%= dance.studio %></h4>
+            <div class="columns">
+              <div class="column danceInfoColumn">
+                <h3 class="title is-5"><%= dance.danceClass %></h3>
+                <h4 class="subtitle is-6"><%= dance.studio %></h4>
+                <h4 class="subtitle is-6"><%= dance.category %></h4>
+              </div>
+              <div class="column ratingColumn">
+                <h4 class="subtitle is-6"><%= dance.avgRating %></h4>
+              </div>
+            </div>
           </div>
         </div>
       </div>

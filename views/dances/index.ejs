@@ -1,15 +1,13 @@
 <main class="container">
-
-      <form class="sort">
-        <select name="category">
-          <option>All</option>
+  <form class="sort">
+    <select name="category">
+      <option>All</option>
         <% categories.forEach(category => { %>
           <option<% if(category === selectedCategory) { %> selected<% } %>><%= category %></option>
-          <% }) %>
-          </select>
-          <button>Go</button>
-      </form>
-
+        <% }) %>
+    </select>
+    <button>Go</button>
+  </form>
   <div class="columns is-multiline">
     <% dances.forEach(dance => { %>
       <div class="column is-one-quarter-desktop is-half-tablet">

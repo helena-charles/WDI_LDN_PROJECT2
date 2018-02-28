@@ -14,7 +14,6 @@ commentSchema.methods.isOwnedBy = function(user) {
 const schema = new mongoose.Schema({
   name: { type: String, required: true, minlength: 2 },
   location: { type: String, required: true, minlength: 2 },
-  information: { type: String, required: true, minlength: 30 },
   image: { type: String, pattern: /^https?\/\/.+/},
   comments: [ commentSchema ],
   klasses: { type: String }

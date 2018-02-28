@@ -5,23 +5,23 @@
         <img src="<%= dance.image %>" alt="<%= dance.danceClass %>">
       </figure>
     </div>
-    <div class="column">
+    <div class="column showPageInfo">
       <h3 class="title"><%= dance.danceClass %></h3>
 
-      <p><%= dance.category %></p>
+      <h4 class="subtitle"><%= dance.category %></h4>
       <p><%= dance.content %></p>
-      <p>Average Rating: <%= dance.avgRating %></p>
+      <p class="showPageRating">Average Rating: <%= dance.avgRating %></p>
 
       <% if(locals.isAuthenticated) { %>
         <div class="column showButtons">
         <div class="column">
-        <a href="/dances/<%= dance._id %>/edit" class="button is-primary">Edit</a>
+        <a href="/dances/<%= dance._id %>/edit" class="button">Edit</a>
         </div>
 
         <div class="column">
         <form method="POST" action="/dances/<%= dance._id %>">
           <input type="hidden" name="_method" value="DELETE">
-          <button class="button is-danger">Delete</button>
+          <button class="button">Delete</button>
         </form>
         </div>
 
@@ -29,12 +29,12 @@
         <% if(!locals.currentUser.hasFavourited(dance)) { %>
         <form method="POST" action="/dances/<%= dance._id %>/favourite">
           <input type="hidden" name="_method" value="<% dance._id %>">
-          <button class="button is-primary">Wishlist</button>
+          <button class="button">Wishlist</button>
         </form>
         <% } else { %>
           <form method="POST" action="/dances/<%= dance._id %>/favourite">
             <input type="hidden" name="_method" value="DELETE">
-            <button class="button is-primary">Remove from Wishlist</button>
+            <button class="button">Remove from Wishlist</button>
           </form>
           <% } %>
           </div>
@@ -56,7 +56,7 @@
           </div>
           <div class="field">
             <div class="rating">
-              <input type="radio" id="star5" name="rating" value="5" required />
+              <input type="radio" id="star5" name="rating" value="5" />
               <label class="full" for="star5"></label>
               <input type="radio" id="star4" name="rating" value="4" />
               <label class="full" for="star4"></label>
@@ -70,7 +70,7 @@
           </div>
 
           <div class="field">
-            <button class="button is-primary">Submit</button>
+            <button class="button">Submit</button>
           </div>
         </form>
 
@@ -83,7 +83,7 @@
             <% if(comment.isOwnedBy(locals.currentUser)) { %>
               <form class="delete" method="POST" action="/dances/<%= dance._id %>/comments/<%= comment._id %>">
                 <input type="hidden" name="_method" value="DELETE">
-                <button class="delete">x</button>
+                <button class="delete"></button>
               </form>
               <% } %>
               <article class="media">

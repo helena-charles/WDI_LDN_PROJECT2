@@ -5,69 +5,101 @@
         <img src="<%= studio.image %>" alt="<%= studio.name %>">
       </figure>
     </div>
-    <div class="column">
+    <div class="column studioShowPageInfo">
       <h3 class="title"><%= studio.name %></h3>
-
-      <p><%= studio.information %></p>
-      <p><%= studio.location %></p>
-      <p>Average Rating: <%= studio.avgRating %></p>
+      <h4 class="subtitle"><%= studio.location %></h4>
 
       <div class="dance-list">
-        <h3>Dances</h3>
-          <% dances.forEach(dance => { %>
-        <a href="/dances/<%= dance._id %>"><%= dance.danceClass %></a>
-        <% }) %>
-      </div>
+        <p class="title is-6" id="classesLink">Classes here: </h3>
+        <% dances.forEach(dance => { %>
+          <a href="/dances/<%= dance._id %>"><%= dance.danceClass %></a>
+          <% }) %>
+          <p>Average Rating: <%= studio.avgRating %></p>
+        </div>
+
       <% if(locals.isAuthenticated) { %>
-        <a href="/studios/<%= studio._id %>/edit" class="button is-primary">Edit</a>
+        <div class="column showButtons">
+        <div class="column">
+        <a href="/studios/<%= studio._id %>/edit" class="button">Edit</a>
+        </div>
+
+        <div class="column">
         <form method="POST" action="/studios/<%= studio._id %>">
           <input type="hidden" name="_method" value="DELETE">
-          <button class="button is-danger">Delete</button>
+          <button class="button">Delete</button>
+        </form>
+        </div>
+
+        <hr />
+        <form method="POST" action="/studios/<%= studio._id %>/comments">
+
+          <div class="field">
+            <div class="control">
+              <input name="maintitle" class="input" type="text" placeholder="Review title">
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <textarea class="textarea" name="content" placeholder="Write a review..."></textarea>
+            </div>
+          </div>
+          <div class="field">
+            <div class="rating">
+              <input type="radio" id="star5" name="rating" value="5" />
+              <label class="full" for="star5"></label>
+              <input type="radio" id="star4" name="rating" value="4" />
+              <label class="full" for="star4"></label>
+              <input type="radio" id="star3" name="rating" value="3" />
+              <label class="full" for="star3"></label>
+              <input type="radio" id="star2" name="rating" value="2" />
+              <label class="full" for="star2"></label>
+              <input type="radio" id="star1" name="rating" value="1" />
+              <label class="full" for="star1"></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <button class="button">Submit</button>
+          </div>
         </form>
 
         <hr />
-<ul class="comments">
-  <% studio.comments.forEach(comment => { %>
-    <li>
-    <div class="box">
-    <% if(comment.isOwnedBy(locals.currentUser)) { %>
-      <form class="delete" method="POST" action="/studios/<%= studio._id %>/comments/<%= comment._id %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <button class="delete">x</button>
-      </form>
-      <% } %>
-      <article class="media">
-        <div class="media-left">
-          <figure class="image is-64x64">
-            <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
-          </figure>
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <%= comment.content %>
-            </p>
-            <% if(comment.user) { %>
-            <strong><%= comment.user.username %></strong>
-            <% } %>
-          </div>
-        </div>
-      </article>
-      </div>
-    </li>
-  <% }) %>
-</ul>
 
+        <ul class="comments">
+          <% studio.comments.forEach(comment => { %>
+            <li>
+            <div class="box">
+            <% if(comment.isOwnedBy(locals.currentUser)) { %>
+              <form class="delete" method="POST" action="/studios/<%= studio._id %>/comments/<%= comment._id %>">
+                <input type="hidden" name="_method" value="DELETE">
+                <button class="delete"></button>
+              </form>
+              <% } %>
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="https://bulma.io/images/placeholders/128x128.png" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                  <p><strong><%= comment.maintitle %></strong></p>
+                    <p><%= comment.content %></p>
+                    <p>Rating: <%= comment.rating %> Stars</p>
+                    <% if(comment.user) { %>
+                    <strong><%= comment.user.username %></strong>
+                    <% } %>
+                  </div>
+                </div>
+              </article>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
 
-        <form method="POST" action="/studios/<%= studio._id %>/comments">
-        <textarea class="textarea" name="content"></textarea>
-        <p>Rating: <input type="text" name="rating"></input></p>
-        <button class="button is-primary">Submit</button>
-        </form>
       <% } else { %>
         <p>Log in to leave a review</p>
         <% } %>
-
 
 
     </div>

@@ -27,7 +27,7 @@ module.exports = [{
   studio: ['Studio 68'],
   content: 'A street dance is a dance style—regardless of country of origin—that evolved outside dance studios in any available open space such as streets, dance parties, block parties, parks, school yards, raves, and nightclubs. The term is used to describe vernacular dances in urban context. Vernacular dances are often improvisational and social in nature, encouraging interaction and contact with spectators and other dancers. These dances are a part of the vernacular culture of the geographical area that they come from. Examples of street dance include b-boying (or breakdancing), which originated in New York City.',
   image: 'https://nearyou.imgix.net/stock/portal/services/dance/street-dance-classes/stock-1.jpg',
-  category: 'Street/Commercial'
+  category: 'Commercial'
 },{
   danceClass: 'Jazz',
   studio: ['Pineapple Dance Studios'],

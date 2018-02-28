@@ -16,6 +16,31 @@
   margin-bottom: 1.5rem;
 }
 
+.showPageInfo p {
+  margin: 10px 10px 20px 10px;
+}
+
+.studioShowPageInfo p {
+  margin: 10px 0;
+}
+
+.studioShowPageInfo #classesLink p {
+  margin-bottom: 10px;
+}
+
+.studioShowPageInfo a {
+  color: #4a4a4a;
+  border-bottom: 1px solid #4a4a4a;
+}
+
+.studioShowPageInfo a:hover {
+  color: black;
+}
+
+.showPageInfo .column {
+  padding: 0;
+}
+
 form.delete {
   display: inline-block;
   float: right;
@@ -51,6 +76,16 @@ form.delete {
   margin-right: 10px;
 }
 
+.profileUserInfo {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.profileUserInfo img {
+  border-radius: 50%;
+  width: 100px;
+}
+
 form.sort, label {
   margin-bottom: 20px;
   margin-top: 15px;
@@ -72,7 +107,11 @@ form.sort, label {
 
 .navbar-link.is-active, .navbar-link:hover, a.navbar-item.is-active, a.navbar-item:hover {
   background-color: white;
-  font-weight: 600;
+}
+
+.navbar-link::after {
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
 }
 
 
