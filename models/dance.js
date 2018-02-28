@@ -28,4 +28,6 @@ schema
     return Math.round(((ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length) * 2) / 2);
   });
 
+schema.set('toObject', { getters: true, virtuals: true });
+
 module.exports = mongoose.model('Dance', schema);

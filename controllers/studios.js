@@ -1,4 +1,5 @@
 const studio = require('../models/studio');
+const Dance = require('../models/dance');
 
 function indexRoute(req, res) {
   studio.find()
@@ -9,8 +10,18 @@ function showRoute(req, res, next) {
   studio.findById(req.params.id)
     .populate('comments.user')
     .then(studio => {
-      if(!studio) return res.render('pages/404');
-      res.render('studios/show', { studio });
+      if(!studio) {
+        return res.render('pages/404');
+      }
+      return studio;
+    })
+    .then(studio => {
+      Dance.find({'studio': studio.name}).then(dances => {
+        res.render('studios/show', { studio: {
+          ...studio.toObject(),
+          dances: dances
+        }});
+      });
     })
     .catch(next);
 }

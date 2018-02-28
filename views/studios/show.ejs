@@ -12,6 +12,12 @@
       </div>
       <p><%= studio.information %></p>
       <p><%= studio.avgRating %> Stars</p>
+      <div class="dance-list">
+        <h3>Dances</h3>
+          <% studio.dances.forEach(dance => { %>
+        <a href="/dances/<%= dance._id %>"><%= dance.danceClass %></a>
+        <% }) %>
+      </div>
 
       <% if(locals.isAuthenticated) { %>
         <a href="/studios/<%= studio._id %>/edit" class="button is-primary">Edit</a>
@@ -61,6 +67,9 @@
         <button class="button is-primary">Submit</button>
         </form>
       <% } %>
+
+
+
     </div>
   </div>
 </div>

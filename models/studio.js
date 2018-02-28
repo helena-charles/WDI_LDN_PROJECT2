@@ -1,3 +1,4 @@
+const Dance = require('./dance');
 const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
@@ -14,7 +15,8 @@ const schema = new mongoose.Schema({
   location: { type: String, required: true, minlength: 2 },
   information: { type: String, required: true, minlength: 30 },
   image: { type: String, pattern: /^https?\/\/.+/},
-  comments: [ commentSchema ]
+  comments: [ commentSchema ],
+  klasses: { type: String }
 });
 
 schema
@@ -24,5 +26,7 @@ schema
     const ratings = this.comments.map(comment => comment.rating);
     return Math.round(((ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length) * 2) / 2);
   });
+
+schema.set('toObject', { getters: true, virtuals: true });
 
 module.exports = mongoose.model('Studio', schema);

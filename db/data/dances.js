@@ -18,7 +18,31 @@ module.exports = [{
   category: 'World'
 },{
   danceClass: 'Ballet',
-  studio: 'Pineapple Dance Studio',
+  studio: 'Danceworks',
+  content: 'Ballet is a type of performance dance that originated during the Italian Renaissance, and later developed into a concert dance form in France and Russia. It has since become a widespread, highly technical form of dance with its own vocabulary based on French terminology.',
+  image: 'https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-es7_GUa7yo4%2FVONOnvzQTMI%2FAAAAAAAABg0%2FCoHsERRZCZo%2Fs1600%2FMichaela%252BDePrince.jpg&container=blogger&gadget=a&rewriteMime=image%2F',
+  category: 'Classical'
+},{
+  danceClass: 'Ballet',
+  studio: 'Danceworks',
+  content: 'Ballet is a type of performance dance that originated during the Italian Renaissance, and later developed into a concert dance form in France and Russia. It has since become a widespread, highly technical form of dance with its own vocabulary based on French terminology.',
+  image: 'https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-es7_GUa7yo4%2FVONOnvzQTMI%2FAAAAAAAABg0%2FCoHsERRZCZo%2Fs1600%2FMichaela%252BDePrince.jpg&container=blogger&gadget=a&rewriteMime=image%2F',
+  category: 'Classical'
+},{
+  danceClass: 'Ballet',
+  studio: 'Danceworks',
+  content: 'Ballet is a type of performance dance that originated during the Italian Renaissance, and later developed into a concert dance form in France and Russia. It has since become a widespread, highly technical form of dance with its own vocabulary based on French terminology.',
+  image: 'https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-es7_GUa7yo4%2FVONOnvzQTMI%2FAAAAAAAABg0%2FCoHsERRZCZo%2Fs1600%2FMichaela%252BDePrince.jpg&container=blogger&gadget=a&rewriteMime=image%2F',
+  category: 'Classical'
+},{
+  danceClass: 'Ballet',
+  studio: 'Danceworks',
+  content: 'Ballet is a type of performance dance that originated during the Italian Renaissance, and later developed into a concert dance form in France and Russia. It has since become a widespread, highly technical form of dance with its own vocabulary based on French terminology.',
+  image: 'https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-es7_GUa7yo4%2FVONOnvzQTMI%2FAAAAAAAABg0%2FCoHsERRZCZo%2Fs1600%2FMichaela%252BDePrince.jpg&container=blogger&gadget=a&rewriteMime=image%2F',
+  category: 'Classical'
+},{
+  danceClass: 'Ballet',
+  studio: 'Danceworks',
   content: 'Ballet is a type of performance dance that originated during the Italian Renaissance, and later developed into a concert dance form in France and Russia. It has since become a widespread, highly technical form of dance with its own vocabulary based on French terminology.',
   image: 'https://images-blogger-opensocial.googleusercontent.com/gadgets/proxy?url=http%3A%2F%2F1.bp.blogspot.com%2F-es7_GUa7yo4%2FVONOnvzQTMI%2FAAAAAAAABg0%2FCoHsERRZCZo%2Fs1600%2FMichaela%252BDePrince.jpg&container=blogger&gadget=a&rewriteMime=image%2F',
   category: 'Classical'
