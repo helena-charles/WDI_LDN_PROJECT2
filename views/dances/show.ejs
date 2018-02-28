@@ -13,12 +13,19 @@
       <p>Average Rating: <%= dance.avgRating %></p>
 
       <% if(locals.isAuthenticated) { %>
+        <div class="column showButtons">
+        <div class="column">
         <a href="/dances/<%= dance._id %>/edit" class="button is-primary">Edit</a>
+        </div>
+
+        <div class="column">
         <form method="POST" action="/dances/<%= dance._id %>">
           <input type="hidden" name="_method" value="DELETE">
           <button class="button is-danger">Delete</button>
         </form>
+        </div>
 
+        <div class="column">
         <% if(!locals.currentUser.hasFavourited(dance)) { %>
         <form method="POST" action="/dances/<%= dance._id %>/favourite">
           <input type="hidden" name="_method" value="<% dance._id %>">
@@ -30,6 +37,8 @@
             <button class="button is-primary">Remove from Wishlist</button>
           </form>
           <% } %>
+          </div>
+          </div>
 
         <hr />
 
@@ -37,17 +46,17 @@
 
           <div class="field">
             <div class="control">
-              <input name="maintitle" class="input" type="text" placeholder="Add your review title here">
+              <input name="maintitle" class="input" type="text" placeholder="Review title">
             </div>
           </div>
           <div class="field">
             <div class="control">
-              <textarea class="textarea" name="content"></textarea>
+              <textarea class="textarea" name="content" placeholder="Write a review..."></textarea>
             </div>
           </div>
           <div class="field">
             <div class="rating">
-              <input type="radio" id="star5" name="rating" value="5" />
+              <input type="radio" id="star5" name="rating" value="5" required />
               <label class="full" for="star5"></label>
               <input type="radio" id="star4" name="rating" value="4" />
               <label class="full" for="star4"></label>

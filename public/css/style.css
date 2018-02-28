@@ -21,9 +21,11 @@ form.delete {
   float: right;
 }
 
-.dance-wishlist {
+.dance-wishlist, .showButtons {
   display: flex;
   flex-direction: row;
+  justify-content: flex-start;
+
 }
 
 .image img {
