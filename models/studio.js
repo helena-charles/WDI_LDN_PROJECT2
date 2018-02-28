@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const commentSchema = new mongoose.Schema({
   content: { type: String },
+  rating: { type: Number, min: 1, max: 5 },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
@@ -22,7 +23,7 @@ const schema = new mongoose.Schema({
 schema
   .virtual('avgRating')
   .get(function getAvgRating() {
-    if(this.comments.length === 0) return 'N/A';
+    if(this.comments.length === 0) return 'No Ratings';
     const ratings = this.comments.map(comment => comment.rating);
     return Math.round(((ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length) * 2) / 2);
   });

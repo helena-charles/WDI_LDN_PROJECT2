@@ -1,4 +1,6 @@
 const Dance = require('../models/dance');
+const studio = require('../models/studio');
+
 // const Category = require('../models/category');
 // const mongoose = require('mongoose');
 const Promise = require('bluebird');

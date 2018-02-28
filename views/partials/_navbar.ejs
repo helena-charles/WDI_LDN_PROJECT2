@@ -1,30 +1,43 @@
-<nav class="navbar is-fixed-top">
+<nav class="navbar" role="navigation" aria-label="dropdown navigation">
+
   <div class="navbar-brand">
-    <a class="navbar-item" href="/">
-      <img src="https://omitlimitation.files.wordpress.com/2017/04/blank-canvas-logo-final-banner-slim.jpg?w=640&h=140" alt="Judges Scores">
-      &nbsp;
-      Judges Scores
-    </a>
-    <div class="navbar-burger" data-target="#mobile-menu">
+
+    <div class="navbar-burger burger" data-target="#mobile-menu" onclick="document.querySelector('.navbar-menu').classList.toggle('is-active');">
       <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
-  <div id="mobile-menu" class="navbar-menu">
+
+    <div id="mobile-menu" class="navbar-menu">
+  <div class="navbar-start">
+
+
+    <a class="navbar-item" href="/">Home</a>
+    <a class="navbar-item" href="/dances">All dances</a>
+    <a class="navbar-item" href="/studios">All studios</a>
+  </div>
+  <% if(locals.isAuthenticated) { %>
     <div class="navbar-end">
-      <a class="navbar-item" href="/">Home</a>
-      <a class="navbar-item" href="/dances">All dances</a>
-      <a class="navbar-item" href="/studios">All studios</a>
-      <% if(locals.isAuthenticated) { %>
-        <a class="navbar-item" href="/dances/new">Add a dance</a>
-        <a class="navbar-item" href="/studios/new">Add a studio</a>
-        <a class="navbar-item" href="/profile">My Profile</a>
-        <a class="navbar-item" href="/logout">Logout</a>
-        <% } else { %>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">My Account</a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/profile">My Profile</a>
+          <a class="navbar-item" href="/dances/new">Add a dance</a>
+          <a class="navbar-item" href="/studios/new">Add a studio</a>
+          <a class="navbar-item" href="/logout">Logout</a>
+        </div>
+      </div>
+    <% } else { %>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">Login/Register</a>
+        <div class="navbar-dropdown">
           <a class="navbar-item" href="/register">Register</a>
           <a class="navbar-item" href="/login">Login</a>
-        <% } %>
+        </div>
+      </div>
     </div>
-  </div>
+  <% } %>
+    </div>
 </nav>

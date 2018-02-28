@@ -12,8 +12,7 @@
       </div>
       <p><%= dance.category %></p>
       <p><%= dance.content %></p>
-      <p><%= dance.avgRating %> Stars</p>
-
+      <p>Average Rating: <%= dance.avgRating %></p>
 
       <% if(locals.isAuthenticated) { %>
         <a href="/dances/<%= dance._id %>/edit" class="button is-primary">Edit</a>
@@ -25,12 +24,12 @@
         <% if(!locals.currentUser.hasFavourited(dance)) { %>
         <form method="POST" action="/dances/<%= dance._id %>/favourite">
           <input type="hidden" name="_method" value="<% dance._id %>">
-          <button class="button is-primary">Favourite</button>
+          <button class="button is-primary">Wishlist</button>
         </form>
         <% } else { %>
           <form method="POST" action="/dances/<%= dance._id %>/favourite">
             <input type="hidden" name="_method" value="DELETE">
-            <button class="button is-primary">Unfavourite</button>
+            <button class="button is-primary">Remove from Wishlist</button>
           </form>
           <% } %>
 

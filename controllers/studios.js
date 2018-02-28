@@ -17,10 +17,7 @@ function showRoute(req, res, next) {
     })
     .then(studio => {
       Dance.find({'studio': studio.name}).then(dances => {
-        res.render('studios/show', { studio: {
-          ...studio.toObject(),
-          dances: dances
-        }});
+        res.render('studios/show', { studio: studio, dances: dances });
       });
     })
     .catch(next);

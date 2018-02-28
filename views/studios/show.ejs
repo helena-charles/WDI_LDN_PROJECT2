@@ -12,13 +12,13 @@
       </div>
       <p><%= studio.information %></p>
       <p><%= studio.avgRating %> Stars</p>
+
       <div class="dance-list">
         <h3>Dances</h3>
-          <% studio.dances.forEach(dance => { %>
+          <% dances.forEach(dance => { %>
         <a href="/dances/<%= dance._id %>"><%= dance.danceClass %></a>
         <% }) %>
       </div>
-
       <% if(locals.isAuthenticated) { %>
         <a href="/studios/<%= studio._id %>/edit" class="button is-primary">Edit</a>
         <form method="POST" action="/studios/<%= studio._id %>">
@@ -27,7 +27,6 @@
         </form>
 
         <hr />
-
 <ul class="comments">
   <% studio.comments.forEach(comment => { %>
     <li>

@@ -28,7 +28,10 @@ form.delete {
   float: right;
 }
 
-
+.dance-wishlist {
+  display: flex;
+  flex-direction: row;
+}
 
 
 
