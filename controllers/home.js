@@ -6,7 +6,7 @@ const Promise = require('bluebird');
 function getReviewCount(Model) {
   return Model.find()
     .then(items => {
-      const length = items.map(i => i.comments.length).reduce((sum, v) => sum + v);
+      const length = items.map(i => i.comments.length).reduce((sum, v) => sum + v, 0);
       return length;
     });
 }
