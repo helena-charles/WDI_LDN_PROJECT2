@@ -16,7 +16,7 @@ module.exports = [{
 },{
   name: 'BASE Studio',
   location: 'SE11',
-  image: 'https://www.thehustlecommunity.com/wp-content/uploads/2018/02/base_logo.png',
+  image: 'https://pbs.twimg.com/profile_images/1825877014/TheBaseLogo_2012.png',
   klasses: []
 },{
   name: 'Dance Attic',
