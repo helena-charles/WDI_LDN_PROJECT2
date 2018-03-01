@@ -1,4 +1,6 @@
 const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 8000;
 const expressLayouts = require('express-ejs-layouts');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -16,10 +18,6 @@ app.set('views', `${__dirname}/views`);
 app.use(expressLayouts);
 
 app.use(express.static(`${__dirname}/public`));
-
-const app = express();
-
-const PORT = process.env.PORT || 8000;
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/dances-database');
 

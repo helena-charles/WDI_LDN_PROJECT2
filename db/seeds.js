@@ -5,7 +5,7 @@ const danceData = require('./data/dances');
 const Studio = require('../models/studio');
 const studioData = require('./data/studios');
 
-mongoose.connect('mongodb://localhost/dances-database', (err, db) => {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/dances-database', (err, db) => {
   db.dropDatabase();
 
   Dance.create(danceData)
