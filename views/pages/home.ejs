@@ -3,28 +3,27 @@
 
     <div class="columns is-multiline">
       <div class="column is-one-third-desktop is-half-tablet">
-        <div>
-          <div><span># of dances </span><%= count.danceCount %></div>
-          <div><span># of studios </span><%= count.studioCount %></div>
-        </div>
+          <div class="numberOfDances">
+            <p>Dance classes: <%= count.danceCount %><br />Studios: <%= count.studioCount %><br /><br />Register or log in to add a studio or dance!</p>
+          </div>
       </div>
       <div class="column is-one-third-desktop is-half-tablet">
-        <div>
-          <div><span># of dance reviews </span><%= count.danceReviewsCount %></div>
-          <div><span># of studio reviews </span><%= count.studioReviewsCount %></div>
-        </div>
+          <div class="numberOfUsers">
+            <p>Join <%= count.userCount %> other users on Judges Scores to help the community find the best dance classes.</p>
+            <p></p>
+          </div>
       </div>
       <div class="column is-one-third-desktop is-half-tablet">
-        <figure class="image is-350x350">
-          <img src="https://placeimg.com/350/350/any">
-        </figure>
+          <div class="numberOfReviews">
+            <p>Dance reviews: <%= count.danceReviewsCount %><br />Studio reviews: <%= count.studioReviewsCount %><br /><br />Register or log in to leave a review!</p>
+          </div>
       </div>
     </div>
 
     <div class="my-slick">
-      <div><img src="https://www.fillmurray.com/g/1151/500"></div>
-      <div><img src="https://www.fillmurray.com/g/1151/500"></div>
-      <div><img src="https://www.fillmurray.com/g/1151/500"></div>
+      <div><img src="https://s3-eu-west-1.amazonaws.com/stratfordcircus/assets/Classes/Street-Dance/_1140x710_crop_center-center_100/Street-Dance_1140x711.jpg?mtime=20160728164502"></div>
+      <div><img src="https://www.freehousedance.com/wp-content/uploads/2015/03/Jazz11-1320x676.jpg"></div>
+      <div><img src="https://s-media-cache-ak0.pinimg.com/originals/3b/29/0a/3b290abb9733f7dd4726e93d55070076.jpg"></div>
     </div>
 
   </div>

@@ -13,7 +13,8 @@ function createRoute(req, res, next) {
 
       req.session.userId = user._id;
 
-      return res.redirect('/');
+      req.flash('success', `Welcome back ${user.username}!`);
+      res.redirect('/');
     })
     .catch(next);
 }

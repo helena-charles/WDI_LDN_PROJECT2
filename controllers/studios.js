@@ -16,7 +16,7 @@ function showRoute(req, res, next) {
       return studio;
     })
     .then(studio => {
-      Dance.find({'studio': studio.name}).then(dances => {
+      Dance.find({ 'studio': studio.name }).then(dances => {
         res.render('studios/show', { studio: studio, dances: dances });
       });
     })

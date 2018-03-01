@@ -16,6 +16,76 @@
   margin-bottom: 1.5rem;
 }
 
+.numberOfDances, .numberOfReviews, .numberOfUsers {
+  color: black;
+  width: 100%;
+  height: 350px;
+  font-size: 36px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+text-shadow:
+-1px -1px 0 #fff,
+1px -1px 0 #fff,
+-1px 1px 0 #fff,
+1px 1px 0 #fff;
+}
+
+.my-slick img {
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.showButtons .button {
+  margin: 0 10px;
+}
+
+.numberOfDances:before {
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(https://app-images.hiive.co.uk/images/uploads/e4b48685-8e7f-4c4b-8922-46928217631b-pic-cne9xwvwoaadqbc.jpg?width=400&height=400&crop=auto&scale=both&quality=70) center center;
+    opacity: .4;
+}
+
+.numberOfReviews:before {
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(https://s-media-cache-ak0.pinimg.com/originals/3d/a3/07/3da307f314c8d8c089aaa16662ea213d.jpg) center center;
+    opacity: .4;
+}
+
+.numberOfUsers:before {
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(https://i.pinimg.com/736x/33/71/83/337183aab54cf6bc3e886cd77b33ddf7--tap-dance-photography-groomsmen-outfits.jpg) center center;
+    opacity: .4;
+}
+
+.numberOfDances img, .numberOfReviews img, .numberOfUsers img {
+  opacity: 0.5;
+}
+
 .showPageInfo p {
   margin: 10px 10px 20px 10px;
 }
@@ -28,13 +98,17 @@
   margin-bottom: 10px;
 }
 
-.studioShowPageInfo a {
+.studioShowPageInfo #classesLink a {
   color: #4a4a4a;
   border-bottom: 1px solid #4a4a4a;
 }
 
 .studioShowPageInfo a:hover {
   color: black;
+}
+
+button.button {
+  font-family: 'Abel', sans-serif;
 }
 
 .showPageInfo .column {

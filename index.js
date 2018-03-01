@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const userAuth = require('./lib/userAuth');
+const flash = require('express-flash');
 
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
@@ -35,6 +36,8 @@ app.use(session({
   resave: false,
   saveUninitialized: false
 }));
+
+app.use(flash());
 
 app.use(userAuth);
 

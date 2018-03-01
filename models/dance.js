@@ -5,7 +5,16 @@ const commentSchema = new mongoose.Schema({
   content: { type: String },
   rating: { type: Number, min: 1, max: 5 },
   user: { type: mongoose.Schema.ObjectId, ref: 'User' }
+},{
+  timestamps: true
 });
+
+commentSchema
+  .virtual('formattedDate')
+  .get(function getFormattedDate() {
+    const monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    return monthName[this.createdAt.getMonth()] + '-' + this.createdAt.getFullYear();
+  });
 
 commentSchema.methods.isOwnedBy = function(user) {
   return this.user._id && user._id.equals(this.user._id);
