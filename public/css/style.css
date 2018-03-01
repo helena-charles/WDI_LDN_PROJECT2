@@ -111,6 +111,10 @@ button.button {
   font-family: 'Abel', sans-serif;
 }
 
+.profilePhoto {
+  margin-right: 20px;
+}
+
 .showPageInfo .column {
   padding: 0;
 }
