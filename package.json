@@ -6,7 +6,7 @@
   "author": "Helena Charles <helsz@hotmail.co.uk>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index"
   },
   "dependencies": {
     "bcrypt": "^1.0.3",
