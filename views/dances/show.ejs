@@ -12,6 +12,13 @@
       <p><%= dance.content %></p>
       <p class="showPageRating">Average Rating: <%= dance.avgRating %></p>
 
+      <div class="studio-list">
+        <h3 class="title is-6" id="classesLink">Studios held at: </h3>
+        <% studios.forEach(studio => { %>
+          <a href="/studios/<%= studio._id %>"><%= studio.name %></a>
+        <% }) %>
+      </div>
+
       <% if(locals.isAuthenticated) { %>
         <div class="column showButtons">
 

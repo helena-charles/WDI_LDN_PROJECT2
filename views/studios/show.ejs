@@ -10,7 +10,7 @@
       <h4 class="subtitle"><%= studio.location %></h4>
 
       <div class="dance-list">
-        <p class="title is-6" id="classesLink">Classes here: </h3>
+        <h3 class="title is-6" id="classesLink">Classes here: </h3>
         <% dances.forEach(dance => { %>
           <a href="/dances/<%= dance._id %>"><%= dance.danceClass %></a>
           <% }) %>

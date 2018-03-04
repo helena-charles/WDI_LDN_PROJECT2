@@ -1,5 +1,5 @@
 const Dance = require('../models/dance');
-const studio = require('../models/studio');
+const Studio = require('../models/studio');
 
 // const Category = require('../models/category');
 // const mongoose = require('mongoose');
@@ -26,14 +26,32 @@ function indexRoute(req, res) {
     });
 }
 
+// function showRoute(req, res, next) {
+//   Dance.findById(req.params.id)
+//     .populate('comments.user')
+//     .then(dance => {
+//       if(!dance) return res.render('pages/404');
+//       res.render('dances/show', { dance });
+//     })
+//     .catch(next);
+// }
+
 function showRoute(req, res, next) {
   Dance.findById(req.params.id)
-    .populate('comments.user')
-    .then(dance => {
-      if(!dance) return res.render('pages/404');
-      res.render('dances/show', { dance });
-    })
-    .catch(next);
+  .populate('comments.user')
+  .then(dance => {
+    if(!dance) {
+      return res.render('pages/404');
+    }
+    return dance;
+  })
+  .then(dance => {
+    Studio.find({ 'klasses': dance.danceClass })
+      .then(studios => {
+        res.render('dances/show', { dance, studios });
+      });
+  })
+  .catch(next);
 }
 
 function newRoute(req, res) {
