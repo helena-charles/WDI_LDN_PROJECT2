@@ -38,20 +38,20 @@ function indexRoute(req, res) {
 
 function showRoute(req, res, next) {
   Dance.findById(req.params.id)
-  .populate('comments.user')
-  .then(dance => {
-    if(!dance) {
-      return res.render('pages/404');
-    }
-    return dance;
-  })
-  .then(dance => {
-    Studio.find({ 'klasses': dance.danceClass })
-      .then(studios => {
-        res.render('dances/show', { dance, studios });
-      });
-  })
-  .catch(next);
+    .populate('comments.user')
+    .then(dance => {
+      if(!dance) {
+        return res.render('pages/404');
+      }
+      return dance;
+    })
+    .then(dance => {
+      Studio.find({ 'klasses': dance.danceClass })
+        .then(studios => {
+          res.render('dances/show', { dance, studios });
+        });
+    })
+    .catch(next);
 }
 
 function newRoute(req, res) {
