@@ -38,7 +38,7 @@ If I had more time, I would have spent more time on styling, as I think this cou
 ## Setup instructions
 
 - Clone or download the repo
-- Install dependencies with `yarn install`
-- Launch the app with `gulp`
+- Install dependencies with `yarn`
+- Launch the app with `yarn start`
 
->**NB**: You will need to have installed `gulp-cli` globally
+>**NB**: You will need to have installed `yarn-cli` globally
