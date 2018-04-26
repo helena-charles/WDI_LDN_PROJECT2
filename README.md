@@ -10,23 +10,25 @@ For our second project, we were given 5 days to build a web application using No
 
 ##### Judges Scores is a web application for users who want a reviewing platform for dance classes and dance studios.
 
-<p align="center"><img src="" width="700"></p>
+<p align="center"><img src="https://i.imgur.com/6LB8WMh.png" width="700"></p>
 
 ##### User journey
 
 1. The homepage of the website features 3 blocks containing information from the database, such as how many users there are, and how many reviews have been posted. There is a carousel at the bottom showing pictures of some dance classes.
 
+<p align="center"><img src="https://i.imgur.com/ZTwLPe8.png" width="700"></p>
+
 2. Without logging in, the user can see the index pages of the dance classes and studios, and filter classes by what type of dance they are looking for. They can also view the page for each dance class, and a message saying log in to leave a review. Each dance studio has a link to what classes are held at that studio.
+
+<p align="center"><img src="https://i.imgur.com/eMtIEEi.png" width="700"></p>
 
 3. Upon registering and logging in, there is a flash message that welcomes the user back. On all pages except the homepage, the "log in to review..." text is replaced with the reviews and the reviewing form. The user also have opportunity to save a dance class to their wishlist, which can be found on their profile page.
 
-<p align="center"><img src="" width="700"></p>
+<p align="center"><img src="https://i.imgur.com/fZcem1k.png" width="700"></p>
 
 ##### Challenges
 
 This was my first experience building a web application using Node.js and EJS, it was challenging to remember how to print data from the server-side into the front-end of the application. I decided to produce functionality over design, as I deemed it more important to ensure that I could work with Node.js as I would get more practice with CSS and styling throughout the course.
-
-<p align="center"><img src="" width="700"></p>
 
 ---
 
