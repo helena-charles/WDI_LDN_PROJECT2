@@ -40,7 +40,6 @@ If I had more time, I would have spent more time on styling, as I think this cou
 ## Setup instructions
 
 - Clone or download the repo
-- Install dependencies with `yarn`
-- Launch the app with `yarn start`
-
->**NB**: You will need to have installed `yarn-cli` globally
+- Install dependencies with `npm install` or `yarn install`
+- Start the local MongoDB server in Node.js with `mongod`
+- Launch the app with `node index`
